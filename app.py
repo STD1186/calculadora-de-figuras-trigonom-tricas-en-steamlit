@@ -4,16 +4,18 @@ import math
 st.title("calculadora de figuras trigonometricas")
 
 # Selección de figura
-figura = st.selectbox("Selecciona una figura", ["Círculo", "Cuadrado", "Triángulo", "Rectángulo"])
+figura = st.selectbox("Selecciona una figura", ["Círculo", "Triángulo", "Rectángulo", "Cuadrado"])
 
 # Círculo
 if figura == "Círculo":
     radio = st.slider("Selecciona el radio", 0.0, 20.0, 5.0)
+    # calculo del area
     area = math.pi * radio**2
+    #calculo del perimetro
     perimetro = 2 * math.pi * radio
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
-    st.success("¡Cálculos del círculo completados!")
+    st.success("¡Resultados!")
 
 # Triángulo
 elif figura == "Triángulo":
@@ -26,7 +28,7 @@ elif figura == "Triángulo":
     perimetro = lado_a + lado_b + lado_c
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
-    st.success("¡Cálculos del triángulo completados!")
+    st.success("¡Resultados!")
 
 # Rectángulo
 elif figura == "Rectángulo":
@@ -36,7 +38,7 @@ elif figura == "Rectángulo":
     perimetro = 2 * (base + altura)
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
-    st.success("¡Cálculos del rectángulo completados!")
+    st.success("¡Resultados!")
 
 # Cuadrado
 elif figura == "Cuadrado":
@@ -45,4 +47,4 @@ elif figura == "Cuadrado":
     perimetro = 4 * lado
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
-    st.success("¡Cálculos del cuadrado completados!")
+    st.success("¡Resultados!")
