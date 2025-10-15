@@ -4,6 +4,7 @@ import numpy as np
 import math
 
 st.title("calculadora de figuras trigonometricas 🎨")
+st.sidebar.write("Nombre: Sasha Torres Davidson", "Matricula: 385944". "Grupo: 3L")
 
 # Selección de figura
 figura = st.selectbox("Selecciona una figura", ["Círculo", "Triángulo", "Rectángulo", "Cuadrado"])
