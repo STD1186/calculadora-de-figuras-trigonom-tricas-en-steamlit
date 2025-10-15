@@ -13,6 +13,7 @@ if figura == "Círculo":
     area = math.pi * radio**2
 #calculo del perimetro
     perimetro = 2 * math.pi * radio
+# resultados
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
@@ -28,6 +29,7 @@ elif figura == "Triángulo":
     area = 0.5 * base * altura
 # calculo del perimetro
     perimetro = lado_a + lado_b + lado_c
+#resultados
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
@@ -36,8 +38,11 @@ elif figura == "Triángulo":
 elif figura == "Rectángulo":
     base = st.slider("Selecciona la base", 0.0, 20.0, 5.0)
     altura = st.slider("Selecciona la altura", 0.0, 20.0, 5.0)
+# calculo del area
     area = base * altura
+# calculo del perimetro
     perimetro = 2 * (base + altura)
+# calculos
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
@@ -45,8 +50,11 @@ elif figura == "Rectángulo":
 # Cuadrado
 elif figura == "Cuadrado":
     lado = st.slider("Selecciona el lado", 0.0, 20.0, 5.0)
+# calculo del area
     area = lado**2
+# calculo del perimetro
     perimetro = 4 * lado
+# resultados
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
