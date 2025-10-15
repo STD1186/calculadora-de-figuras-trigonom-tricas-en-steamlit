@@ -1,5 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import numpy as np
 import math
 
 st.title("calculadora de figuras trigonometricas 🎨")
@@ -95,4 +96,33 @@ elif figura == "Triángulo":
 # Configuración final del gráfico
 ax.set_aspect('equal')
 ax.axis('off')
+st.pyplot(fig)
+
+# Selección de función
+funcion = st.selectbox("Selecciona una función", ["sin(x)", "cos(x)", "tan(x)"])
+
+# Parámetros
+rango_max = st.slider("Rango máximo (x)", np.pi, 4 * np.pi, 2 * np.pi)
+amplitud = st.slider("Amplitud", 0.1, 2.0, 1.0)
+
+# Generar valores
+x = np.linspace(0, rango_max, 300)
+
+# Graficar función seleccionada
+st.write(f"Función seleccionada: {funcion}")
+
+if funcion == "sin(x)":
+    y = amplitud * np.sin(x)
+elif funcion == "cos(x)":
+    y = amplitud * np.cos(x)
+elif funcion == "tan(x)":
+    y = amplitud * np.tan(x)
+    y = np.clip(y, -10, 10)  # limitar valores extremos para tan(x)
+
+# Mostrar gráfico
+fig, ax = plt.subplots()
+ax.plot(x, y, label=funcion)
+ax.set_title(f"Gráfica de {funcion}")
+ax.grid(True)
+ax.legend()
 st.pyplot(fig)
