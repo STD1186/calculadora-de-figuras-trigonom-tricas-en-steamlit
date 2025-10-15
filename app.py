@@ -9,9 +9,9 @@ figura = st.selectbox("Selecciona una figura", ["Círculo", "Triángulo", "Rect�
 # Círculo
 if figura == "Círculo":
     radio = st.slider("Selecciona el radio", 0.0, 20.0, 5.0)
-    # calculo del area
+# calculo del area
     area = math.pi * radio**2
-    #calculo del perimetro
+#calculo del perimetro
     perimetro = 2 * math.pi * radio
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
@@ -24,7 +24,9 @@ elif figura == "Triángulo":
     lado_a = st.slider("Lado a", 0.0, 20.0, 5.0)
     lado_b = st.slider("Lado b", 0.0, 20.0, 5.0)
     lado_c = st.slider("Lado c", 0.0, 20.0, 5.0)
+# calculo del area
     area = 0.5 * base * altura
+# calculo del perimetro
     perimetro = lado_a + lado_b + lado_c
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
