@@ -3,26 +3,46 @@ import math
 
 st.title("calculadora de figuras trigonometricas")
 
-# 1. Selección de figura
-figura = st.selectbox("Selecciona una figura geométrica", ["Circulo","Triángulo", "Rectangulo", "Cuadrado"])
+# Selección de figura
+figura = st.selectbox("Selecciona una figura", ["Círculo", "Cuadrado", "Triángulo", "Rectángulo"])
 
-# 2. Mostrar parámetros relevantes
-if figura == "Triángulo":
-    st.subheader("Parámetros del triángulo")
-    base = st.number_input("Base (b)", min_value=0.0, format="%.2f")
-    altura = st.number_input("Altura (h)", min_value=0.0, format="%.2f")
-    lado_a = st.number_input("Lado a", min_value=0.0, format="%.2f")
-    lado_b = st.number_input("Lado b", min_value=0.0, format="%.2f")
-    lado_c = st.number_input("Lado c", min_value=0.0, format="%.2f")
+# Círculo
+if figura == "Círculo":
+    radio = st.slider("Selecciona el radio", 0.0, 20.0, 5.0)
+    area = math.pi * radio**2
+    perimetro = 2 * math.pi * radio
+    st.metric("Área", f"{area:.2f}")
+    st.metric("Perímetro", f"{perimetro:.2f}")
+    st.success("¡Cálculos del círculo completados!")
 
- # 3. Cálculos
-    if base > 0 and altura > 0 and lado_a > 0 and lado_b > 0 and lado_c > 0:
-        area = 0.5 * base * altura
-        perimetro = lado_a + lado_b + lado_c
+# Cuadrado
+elif figura == "Cuadrado":
+    lado = st.slider("Selecciona el lado", 0.0, 20.0, 5.0)
+    area = lado**2
+    perimetro = 4 * lado
+    st.metric("Área", f"{area:.2f}")
+    st.metric("Perímetro", f"{perimetro:.2f}")
+    st.success("¡Cálculos del cuadrado completados!")
 
- # 4. Mostrar resultados
-        st.metric("Área", f"{area:.2f}")
-        st.metric("Perímetro", f"{perimetro:.2f}")
-        st.success("¡Cálculos realizados correctamente!")
-    else:
-        st.warning("Por favor, ingresa todos los valores mayores a cero.")
+# Triángulo
+elif figura == "Triángulo":
+    base = st.slider("Selecciona la base", 0.0, 20.0, 5.0)
+    altura = st.slider("Selecciona la altura", 0.0, 20.0, 5.0)
+    lado_a = st.slider("Lado a", 0.0, 20.0, 5.0)
+    lado_b = st.slider("Lado b", 0.0, 20.0, 5.0)
+    lado_c = st.slider("Lado c", 0.0, 20.0, 5.0)
+    area = 0.5 * base * altura
+    perimetro = lado_a + lado_b + lado_c
+    st.metric("Área", f"{area:.2f}")
+    st.metric("Perímetro", f"{perimetro:.2f}")
+    st.success("¡Cálculos del triángulo completados!")
+
+# Rectángulo
+elif figura == "Rectángulo":
+    base = st.slider("Selecciona la base", 0.0, 20.0, 5.0)
+    altura = st.slider("Selecciona la altura", 0.0, 20.0, 5.0)
+    area = base * altura
+    perimetro = 2 * (base + altura)
+    st.metric("Área", f"{area:.2f}")
+    st.metric("Perímetro", f"{perimetro:.2f}")
+    st.success("¡Cálculos del rectángulo completados!")
