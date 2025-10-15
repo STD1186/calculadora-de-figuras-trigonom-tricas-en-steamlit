@@ -4,10 +4,6 @@ import math
 
 st.title("calculadora de figuras trigonometricas 🎨")
 
-color = st.color_picker("Selecciona el color de la figura", "#00f900")
-fig, ax = plt.subplots()
-
-
 # Selección de figura
 figura = st.selectbox("Selecciona una figura", ["Círculo", "Triángulo", "Rectángulo", "Cuadrado"])
 
