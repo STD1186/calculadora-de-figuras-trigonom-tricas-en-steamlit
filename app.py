@@ -15,15 +15,6 @@ if figura == "Círculo":
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Cálculos del círculo completados!")
 
-# Cuadrado
-elif figura == "Cuadrado":
-    lado = st.slider("Selecciona el lado", 0.0, 20.0, 5.0)
-    area = lado**2
-    perimetro = 4 * lado
-    st.metric("Área", f"{area:.2f}")
-    st.metric("Perímetro", f"{perimetro:.2f}")
-    st.success("¡Cálculos del cuadrado completados!")
-
 # Triángulo
 elif figura == "Triángulo":
     base = st.slider("Selecciona la base", 0.0, 20.0, 5.0)
@@ -46,3 +37,12 @@ elif figura == "Rectángulo":
     st.metric("Área", f"{area:.2f}")
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Cálculos del rectángulo completados!")
+
+# Cuadrado
+elif figura == "Cuadrado":
+    lado = st.slider("Selecciona el lado", 0.0, 20.0, 5.0)
+    area = lado**2
+    perimetro = 4 * lado
+    st.metric("Área", f"{area:.2f}")
+    st.metric("Perímetro", f"{perimetro:.2f}")
+    st.success("¡Cálculos del cuadrado completados!")
