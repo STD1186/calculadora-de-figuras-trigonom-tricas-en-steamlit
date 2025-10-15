@@ -63,7 +63,8 @@ elif figura == "Cuadrado":
 
 
 # Selector de color
-color = st.color_picker("Selecciona el color del borde", "#00f900")
+color = st.color_picker("Selecciona el color del borde", "#00f900", "#00BFFF", "#32CD32", "#FF6347", "#DA70D6")
+Puedes copiarlos directamente en el st.color_picker() o usarlos como valores por defecto. ¿Quieres que te ayude a aplicar uno de estos colores a una figura específica?)
 
 # Crear figura de matplotlib
 fig, ax = plt.subplots()
