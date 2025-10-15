@@ -60,40 +60,31 @@ elif figura == "Cuadrado":
     st.metric("Perímetro", f"{perimetro:.2f}")
     st.success("¡Resultados!")
 
-
-
 # Selector de color
-color = st.color_picker("Selecciona el color del borde", "#00f900", "#00BFFF", "#32CD32", "#FF6347", "#DA70D6")
+color = st.color_picker("Selecciona el color del borde", "#00f900")
 
 # Crear figura de matplotlib
 fig, ax = plt.subplots()
 
 if figura == "Círculo":
-    radio = st.slider("Radio", 0.0, 10.0, 5.0)
     circle = plt.Circle((0, 0), radio, color=color, fill=False)
     ax.add_artist(circle)
     ax.set_xlim(-radio - 1, radio + 1)
     ax.set_ylim(-radio - 1, radio + 1)
 
 elif figura == "Cuadrado":
-    lado = st.slider("Lado", 0.0, 10.0, 5.0)
     square = plt.Rectangle((-lado/2, -lado/2), lado, lado, edgecolor=color, fill=False)
     ax.add_artist(square)
     ax.set_xlim(-lado, lado)
     ax.set_ylim(-lado, lado)
 
 elif figura == "Rectángulo":
-    base = st.slider("Base", 0.0, 10.0, 6.0)
-    altura = st.slider("Altura", 0.0, 10.0, 4.0)
     rect = plt.Rectangle((-base/2, -altura/2), base, altura, edgecolor=color, fill=False)
     ax.add_artist(rect)
     ax.set_xlim(-base, base)
     ax.set_ylim(-altura, altura)
 
 elif figura == "Triángulo":
-    base = st.slider("Base", 0.0, 10.0, 6.0)
-    altura = st.slider("Altura", 0.0, 10.0, 4.0)
-    # Triángulo isósceles centrado
     x = [-base/2, base/2, 0]
     y = [0, 0, altura]
     triangle = plt.Polygon(list(zip(x, y)), edgecolor=color, fill=False)
